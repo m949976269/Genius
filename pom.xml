@@ -11,6 +11,8 @@
     <modules>
         <module>genius-common</module>
         <module>genius-transport</module>
+        <module>genius-transport-api</module>
+        <module>geniusserializationapi</module>
     </modules>
 
     <properties>
@@ -47,6 +49,16 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>genius-transport</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>genius-transport-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>genius-serialization-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
