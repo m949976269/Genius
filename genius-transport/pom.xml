@@ -16,6 +16,16 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>genius-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>mcc</groupId>
+            <artifactId>genius-transport-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mcc</groupId>
+            <artifactId>genius-serialization-api</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>io.netty</groupId>
@@ -49,10 +59,7 @@
             <!-- https://github.com/trustin/os-maven-plugin -->
             <classifier>osx-x86_64</classifier>
         </dependency>
-        <dependency>
-            <groupId>mcc</groupId>
-            <artifactId>genius-transport-api</artifactId>
-        </dependency>
+
 
     </dependencies>
 
