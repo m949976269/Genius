@@ -16,7 +16,9 @@
 
 package mcc.genius.common.util.internal;
 
-import org.jupiter.common.util.SystemPropertyUtil;
+
+
+import mcc.genius.common.util.SystemPropertyUtil;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

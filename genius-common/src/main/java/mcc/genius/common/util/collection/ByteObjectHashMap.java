@@ -397,7 +397,7 @@ public class ByteObjectHashMap<V> implements ByteObjectMap<V> {
     private boolean removeAt(final int index) {
         --size;
         // Clearing the key is not strictly necessary (for GC like in a regular collection),
-        // but recommended for security. The memory location is still fresh in the cache anyway.
+        // but recommended for security. The memory location is still fresh in the clients anyway.
         keys[index] = 0;
         values[index] = null;
 

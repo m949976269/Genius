@@ -16,7 +16,8 @@
 
 package mcc.genius.common.util.internal;
 
-import static org.jupiter.common.util.Preconditions.checkNotNull;
+
+import static mcc.genius.common.util.Preconditions.checkNotNull;
 
 /**
  * jupiter

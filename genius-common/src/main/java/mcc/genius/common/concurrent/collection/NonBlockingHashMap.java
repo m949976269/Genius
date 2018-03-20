@@ -657,8 +657,8 @@ public class NonBlockingHashMap<TypeK, TypeV>
         // Main spin/reprobe loop, looking for a Key hit
         int reprobe_cnt = 0;
         while (true) {
-            // Probe table.  Each read of 'val' probably misses in cache in a big
-            // table; hopefully the read of 'key' then hits in cache.
+            // Probe table.  Each read of 'val' probably misses in clients in a big
+            // table; hopefully the read of 'key' then hits in clients.
             final Object K = key(kvs, idx); // Get key   before volatile read, could be null
             final Object V = val(kvs, idx); // Get value before volatile read, could be null or Tombstone or Prime
             if (K == null) return null;   // A clear miss

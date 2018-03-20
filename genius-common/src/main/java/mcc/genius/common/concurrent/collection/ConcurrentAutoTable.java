@@ -42,7 +42,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
  * operations.  Updates are done with CAS's to no particular table element.
  * The intent is to support highly scalable counters, r/w locks, and other
  * structures where the updates are associative, loss-free (no-brainer), and
- * otherwise happen at such a high volume that the cache contention for
+ * otherwise happen at such a high volume that the clients contention for
  * CAS'ing a single word is unacceptable.
  *
  * @author Cliff Click
@@ -63,7 +63,7 @@ public class ConcurrentAutoTable implements Serializable {
      * Add the given value to current counter value.  Concurrent updates will
      * not be lost, but addAndGet or getAndAdd are not implemented because the
      * total counter value (i.e., {@link #get}) is not atomically updated.
-     * Updates are striped across an array of counters to avoid cache contention
+     * Updates are striped across an array of counters to avoid clients contention
      * and has been tested with performance scaling linearly up to 768 CPUs.
      */
     public void add(long x) {
@@ -168,7 +168,7 @@ public class ConcurrentAutoTable implements Serializable {
     private static int hash() {
         //int h = (int)Thread.currentThread().getId();
         int h = System.identityHashCode(Thread.currentThread());
-        return h << 3;                // Pad out cache lines.  The goal is to avoid cache-line contention
+        return h << 3;                // Pad out clients lines.  The goal is to avoid clients-line contention
     }
 
     // --- CAT -----------------------------------------------------------------
@@ -258,7 +258,7 @@ public class ConcurrentAutoTable implements Serializable {
         }
 
         // Fast fuzzy version.  Used a cached value until it gets old, then re-up
-        // the cache.
+        // the clients.
         public long estimate_sum() {
             // For short tables, just do the work
             if (_t.length <= 64) return sum();

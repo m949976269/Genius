@@ -59,6 +59,17 @@
             <!-- https://github.com/trustin/os-maven-plugin -->
             <classifier>osx-x86_64</classifier>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.19.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.37</version>
+        </dependency>
 
 
     </dependencies>
